@@ -49,6 +49,7 @@
     "stylelint-scss": "^5.3.1"
   },
   "dependencies": {
+    "@fortawesome/angular-fontawesome": "^0.13.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "angular-font-awesome": "^3.1.2"

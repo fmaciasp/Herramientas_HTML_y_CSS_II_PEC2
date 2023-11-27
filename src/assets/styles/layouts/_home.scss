@@ -3,17 +3,240 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  color: #000078;
+  background-color: #fff;
+  min-height: 100vh;
   margin: 0;
-  padding: 2rem;
-  font-family: $font-family-sans-serif;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 16px;
   line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
+  display: flex;
+  flex-direction: column;
 }
+
+.container {
+  padding: 0;
+}
+
+.cabecera {
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+}
+
+.cabecera--logo-img {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.container--title {
+  opacity: .8;
+  background-color: #fff;
+  margin: auto;
+  padding: 2rem;
+  position: absolute;
+  text-align: center;
+  width: 40%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cabecera--menu {
+  display: flex;
+}
+
+.entradilla {
+  padding: 2rem;
+  opacity: .8;
+  background-color: #fff;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  width: 40%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container--imagen {
+  object-fit: cover;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.cabecera--lista {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.cabecera--lista li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.uoc-footer {
+  text-align: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+}
+
+.footer--logo {
+    height: 100%;
+}
+
+.footer--logo-img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-height: 100%;
+}
+
+.footer--paginas-lista {
+  list-style: none;
+  display: flex;
+}
+
+.footer--paginas-lista li {
+  margin-right: 10vh;
+  cursor: pointer;
+}
+
+.footer--rrss-lista {
+  list-style: none;
+  display: flex;
+}
+
+.footer--rrss-lista li {
+  margin-right: 10vh;
+  cursor: pointer;
+}
+
+@supports (display: grid) {
+  .container {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 2fr;
+    grid-template-rows: 10vh 10vh 10vh 30vh 20vh;
+  }
+
+  .cabecera {
+    display: grid;
+    grid-template-rows: 10vh;
+    grid-template-columns: 1fr 1fr 2fr 2fr;
+    justify-content: unset;
+  }
+
+  .cabecera--logo-img {
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  .cabecera--logo {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .container--title {
+    grid-row: 3;
+    grid-column: 3;
+    margin: 0;
+    padding-top: 2rem;
+    transform: unset;
+    top: unset;
+    left: unset;
+    width: unset;
+    position: unset;
+  }
+
+  .cabecera--menu {
+    grid-row: 1;
+    grid-column: 4;
+    display: flex;
+  }
+
+  .entradilla {
+    grid-row: 4;
+    grid-column: 3;
+    background-color: #fff;
+    margin: 0;
+    padding: 2rem;
+    opacity: $portada-transparencia;
+    text-align: unset;
+    width: unset;
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+  }
+
+  .container--imagen {
+    object-fit: cover;
+    z-index: -1;
+    grid-row: 1/6;
+    grid-column: 1/5;
+    height: 100%;
+    width: 100%;
+  }
+
+  .cabecera--lista {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .cabecera--lista li {
+    margin-right: 20px;
+  }
+
+  .uoc-footer {
+    text-align: center;
+    background-color: #fff;
+    grid-template-rows: 10vh;
+    grid-template-columns: 25vw 50vw 25vw;
+    display: grid;
+    align-items: center;
+  }
+
+  .footer--logo {
+      height: 100%;
+  }
+
+  .footer--logo-img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    max-height: 100%;
+  }
+
+  .footer--paginas-lista {
+    list-style: none;
+    display: flex;
+  }
+
+  .footer--paginas-lista li {
+    flex: 1;
+    margin-right: unset;
+  }
+
+  .footer--rrss-lista {
+    list-style: none;
+    display: flex;
+  }
+
+  .footer--rrss-lista li {
+    flex: 1;
+    margin-right: unset;
+  }
+}
+
+
+//----------------------------------------------------
 
 .uoc-container {
   max-width: 800px;
@@ -43,15 +266,9 @@ body {
   font-family: $font-family-serif;
   font-size: 24px;
   font-weight: 700;
-  color: $uoc-corporate;
+  color: $tenis-corporate;
 
   @media (min-width: $mqMinWidth) {
     font-size: 36px;
   }
-}
-
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
 }

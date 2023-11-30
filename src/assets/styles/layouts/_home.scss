@@ -63,6 +63,16 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.container--portada{
+  container-type: inline-size;
+}
+
+@container(min-width: 1000px){
+  .entradilla{
+    font-size: 1.5rem;
+  }
+}
+
 .container--imagen {
   object-fit: cover;
   z-index: -1;
@@ -303,7 +313,10 @@ a{
 
 .container--bloque-1 {
   flex: 2;
-  font-size: 3vh;
+}
+
+.container :where(.container--bloque-1,blockquote){
+  font-size: 1.7rem;
 }
 
 .container--bloque-2 {
@@ -321,9 +334,6 @@ li span {
   font-weight: bold;
 }
 
-blockquote {
-  font-size: 1.6rem;
-}
 
 .container--lista-miembro {
   width: calc(33.333% - 20px);

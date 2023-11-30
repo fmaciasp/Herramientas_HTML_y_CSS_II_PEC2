@@ -3,7 +3,7 @@
 }
 
 body {
-  color: #000078;
+  color: $tenis-corporate !important;
   background-color: #fff;
   min-height: 100vh;
   margin: 0;
@@ -17,12 +17,14 @@ body {
 
 .container {
   padding: 0;
+  margin-top: 6rem;
 }
 
 .cabecera {
   display: flex;
   justify-content: space-around;
   height: 10vh;
+  border-bottom: 1px solid $tenis-corporate;
 }
 
 .cabecera--logo-img {
@@ -76,6 +78,9 @@ body {
 
 .cabecera--lista li {
   margin-right: 20px;
+}
+
+a{
   cursor: pointer;
 }
 
@@ -85,6 +90,10 @@ body {
   display: flex;
   justify-content: space-around;
   height: 10vh;
+  border-top: 1px solid $tenis-corporate;
+  padding: 0 5%;
+  width: $footer-width;
+  margin: auto;
 }
 
 .footer--logo {
@@ -100,11 +109,15 @@ body {
 .footer--paginas-lista {
   list-style: none;
   display: flex;
-}
+} 
 
 .footer--paginas-lista li {
   margin-right: 10vh;
-  cursor: pointer;
+}
+
+.footer--paginas-lista a{
+  text-decoration: none;
+  color: $tenis-corporate;
 }
 
 .footer--rrss-lista {
@@ -114,23 +127,21 @@ body {
 
 .footer--rrss-lista li {
   margin-right: 10vh;
-  cursor: pointer;
 }
 
 @supports (display: grid) {
-  .container {
+
+  .container--portada{
     padding: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 2fr;
     grid-template-rows: 10vh 10vh 10vh 35vh 15vh;
-  }
-
-  .container--portada{
     max-width: unset !important;
     padding-right: 0 !important;
     padding-left: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    margin-top: unset;
   }
 
   .cabecera {
@@ -149,6 +160,7 @@ body {
   .cabecera--logo {
     grid-row: 1;
     grid-column: 2;
+    margin-bottom: 1px;
   }
 
   .container--title {
@@ -207,10 +219,14 @@ body {
     text-align: center;
     background-color: #fff;
     grid-template-rows: 10vh;
-    grid-template-columns: 25vw 50vw 25vw;
-    display: grid;
+    grid-template-columns: 20vw 40vw 20vw;
     align-items: center;
-  }
+    display: grid;
+    border-top: 1px solid $tenis-corporate;
+    padding: 0 5%;
+    width: $footer-width;
+    margin: auto;
+}
 
   .footer--logo {
       height: 100%;
@@ -255,6 +271,96 @@ body {
       grid-template-rows: 10vh 10vh 10vh 30vh 20vh;
     }
   }
+}
+
+.cabecera--lista a {
+  text-decoration: none;
+  color: $tenis-corporate;
+}
+
+.portada {
+  height: 45vh;
+  margin-bottom: 5%;
+}
+
+.container:has(.container--bloque) {
+  width: 55%;
+  margin-top: 1rem;
+}
+
+.container:has(.container--form) {
+  width: 50%;
+}
+
+.container--titulo {
+  text-align: center;
+}
+
+.container--bloque {
+  display: flex;
+  flex-direction: row;
+}
+
+.container--bloque-1 {
+  flex: 2;
+  font-size: 3vh;
+}
+
+.container--bloque-2 {
+  flex: 3;
+  margin-left: 20px;
+}
+
+.container--lista {
+  margin: 15px 0;
+  border-bottom: 1px solid #aaa;
+  padding: 1.5rem 0;
+}
+
+li span {
+  font-weight: bold;
+}
+
+blockquote {
+  font-size: 1.6rem;
+}
+
+.container--lista-miembro {
+  width: calc(33.333% - 20px);
+  margin: 10px 10px 35px 10px;
+  box-sizing: border-box;
+  text-align: center;
+  float: left;
+}
+
+.container--miembro-nombre{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.container--miembro-imagen {
+  margin-bottom: 15px;
+}
+
+.container--miembro-imagen img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.container--form-campo {
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.container--form-button {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.container--form-campo select{
+  width: 40%;
 }
 
 
